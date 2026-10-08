@@ -1,0 +1,35 @@
+{
+  "name": "nexus-ai-autonomous-intelligence",
+  "version": "1.0.0",
+  "description": "NEXUS AI - Autonomous Problem-Solving Intelligence Multi-Agent Platform",
+  "scripts": {
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "migrate": "cd server && npx tsx ../supabase/run-migration.ts",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "dev": "concurrently -n \"SERVER,CLIENT\" -c \"cyan,magenta\" \"npm run server\" \"npm run client\"",
+    "build": "cd client && npm run build && cd ../server && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "nexus-ai",
+    "agentic-ai",
+    "multi-agent",
+    "autonomous-agents",
+    "gemini",
+    "supabase",
+    "react-flow"
+  ],
+  "author": "NEXUS AI Team",
+  "license": "MIT",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.109.0",
+    "@types/ws": "^8.18.2",
+    "dotenv": "^18.0.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "ws": "^8.22.0"
+  }
+}
